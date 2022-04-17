@@ -17,11 +17,63 @@ let weather = {
         console.log(name,icon,description,temp,humidity,speed);
         document.querySelector(".city").innerText = "Wetter in " + name;
             //document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
-        //const conditions = ["Sehr Sonnig", "Sonnig", "Leicht Bewölkt", "Bewölkt", "Stark Bewölkt", "Leichter Regen", "Regen", "Stürmisch", "Gewitter", "Schnee", "Schneesturm"]
-        document.querySelector(".description").innerText = description;
-        document.querySelector(".temp").innerText = temp + "°C";
+        const tempNew = Math.floor(Math.random() * (105 - (-50) + 1) ) + (-50)
+        const conditions = ["Sehr Sehr Sonnig", "Sehr Sonnig", "Sonnig", "Leicht Bewölkt", "Bewölkt", "Stark Bewölkt", "Leichter Regen", "Regen", "Stürmisch", "Gewitter", "Schnee", "Schneesturm"]
+        document.querySelector(".temp").innerText = tempNew  + "°C";
+
+        if (tempNew >= -50 && tempNew <= -20) {
+            const conditionsNew = conditions[11]
+            document.querySelector(".description").innerText = conditionsNew;
+        }
+        else if (tempNew >= -20 && tempNew <= 0) {
+            const conditionsNew = conditions[10]
+            document.querySelector(".description").innerText = conditionsNew;
+        }
+        else if (tempNew >= 0 && tempNew <= 5) {
+            const conditionsNew = conditions[9]
+            document.querySelector(".description").innerText = conditionsNew;
+        }
+        else if (tempNew >= 5 && tempNew <= 8) {
+            const conditionsNew = conditions[8]
+            document.querySelector(".description").innerText = conditionsNew;
+        }
+        else if (tempNew >= 8 && tempNew <= 11) {
+            const conditionsNew = conditions[7]
+            document.querySelector(".description").innerText = conditionsNew;
+        }
+        else if (tempNew >= 11 && tempNew <= 15) {
+            const conditionsNew = conditions[6]
+            document.querySelector(".description").innerText = conditionsNew;
+        }
+        else if (tempNew >= 15 && tempNew <= 18) {
+            const conditionsNew = conditions[5]
+            document.querySelector(".description").innerText = conditionsNew;
+        }
+        else if (tempNew >= 20 && tempNew <= 23) {
+            const conditionsNew = conditions[4]
+            document.querySelector(".description").innerText = conditionsNew;
+        }
+        else if (tempNew >= 23 && tempNew <= 25) {
+            const conditionsNew = conditions[3]
+            document.querySelector(".description").innerText = conditionsNew;
+        }
+        else if (tempNew >= 25 && tempNew <= 35) {
+            const conditionsNew = conditions[2]
+            document.querySelector(".description").innerText = conditionsNew;
+        }
+        else if (tempNew >= 35 && tempNew <= 65) {
+            const conditionsNew = conditions[1]
+            document.querySelector(".description").innerText = conditionsNew;
+        }
+        else if (tempNew >= 65 && tempNew <= 105) {
+            const conditionsNew = conditions[0]
+            document.querySelector(".description").innerText = conditionsNew;
+        }
+
+        //document.querySelector(".description").innerText = conditionsNew;
+
         document.querySelector(".humidity").innerText = "Luftfeuchtigkeit: " + humidity + "%";
-        document.querySelector(".wind").innerText = "Wind: " + speed + "km/h";
+        document.querySelector(".wind").innerText = "Wind: " + Math.floor(Math.random() * (200 - (-5) + 1) ) + "km/h";
         document.querySelector(".weather").classList.remove("loading");
     },
     search: function () {
