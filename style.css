@@ -6,7 +6,7 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background: #222;
-    background-image: url("https://source.unsplash.com/1920x1080/?landscape");
+    background-color: rgb(19, 58, 77);
     font-size: 120%;
 }
 
